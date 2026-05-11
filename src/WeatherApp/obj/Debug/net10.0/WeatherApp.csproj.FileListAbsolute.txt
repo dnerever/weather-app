@@ -83,3 +83,4 @@
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/WeatherApp.pdb
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/WeatherApp.genruntimeconfig.cache
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/ref/WeatherApp.dll
+/home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/WeatherApp.sourcelink.json
