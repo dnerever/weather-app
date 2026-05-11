@@ -83,4 +83,4 @@
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/WeatherApp.sourcelink.json
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/aat6virfgr-{0}-60sg62xz0e-60sg62xz0e.gz
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/gdw0jldr64-{0}-60sg62xz0e-60sg62xz0e.gz
-/home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/zcq9s1xo44-{0}-ev9nmpkdj4-ev9nmpkdj4.gz
+/home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/zcq9s1xo44-{0}-j0jr1oe3dc-j0jr1oe3dc.gz

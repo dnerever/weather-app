@@ -3,9 +3,7 @@
 @inject WeatherApp.Services.WeatherService WeatherService
 @using WeatherApp.Models
 
-<PageTitle>Weather</PageTitle>
-
-<h1>Weather</h1>
+<PageTitle>WeatherNow</PageTitle>
 
 <div class="container mt-4" style="max-width: 500px;">
     <h1 class="mb-4">Weather Search</h1>
@@ -17,27 +15,41 @@
         <button class="btn btn-primary" @onclick="SearchWeather">Search</button>
     </div>
 
-
-    @if (isLoading)
-    {
-        <p><em>Loading...</em></p>
-    }
-    else if (errorMessage != null)
-    {
-        <p class="alert alert-danger">@errorMessage</p>
-    }
-    else if (weather?.Current != null && location != null)
-    {
-        <div class="card shadow-sm">
-            <div class="card-body">
-                <h3 class="card-title">@location.Name, @location.Country</h3>
-                <hr />
-                <p>Temperature: <strong>@weather.Current.Temperature2m °C</strong></p>
-                <p>Wind Speed: <strong>@weather.Current.WindSpeed10m km/h</strong></p>
-                <p class="fs-5">@WeatherCodeHelper.GetEmoji(weather.Current.WeatherCode) @WeatherCodeHelper.GetDescription(weather.Current.WeatherCode)</p>
+    <ErrorBoundary>
+        <ChildContent>
+            @if (isLoading)
+            {
+                <div class="d-flex align-items-center gap-2">
+                    <div class="spinner-border spinner-border-sm text-primary" role="status"></div>
+                    <span>Searching...</span>
+                </div>
+            }
+            else if (errorMessage != null)
+            {
+                <p class="alert alert-danger">@errorMessage</p>
+            }
+            else if (weather?.Current != null && location != null)
+            {
+                <div class="card shadow-sm weather-card">
+                    <div class="card-body">
+                        <h3 class="card-title">@location.Name, @location.Country</h3>
+                        <hr />
+                        <p>Temperature: <strong>@GetDisplayTemp() @(isCelsius ? "°C" : "°F")</strong></p>
+                        <button class="btn btn-sm btn-outline-secondary mt-1" @onclick="ToggleUnit">
+                            Switch to @(isCelsius ? "°F" : "°C")
+                        </button>
+                        <p>Wind Speed: <strong>@weather.Current.WindSpeed10m km/h</strong></p>
+                        <p class="fs-5">@WeatherCodeHelper.GetEmoji(weather.Current.WeatherCode) @WeatherCodeHelper.GetDescription(weather.Current.WeatherCode)</p>
+                    </div>
+                </div>
+            }
+        </ChildContent>
+        <ErrorContent>
+            <div class="alert alert-danger">
+                Something went wrong loading weather data. Please try again.
             </div>
-        </div>
-    }
+        </ErrorContent>
+    </ErrorBoundary>
 </div>
 
 @code {
@@ -46,6 +58,7 @@
     private string? errorMessage;
     private WeatherApp.Models.WeatherResponse? weather;
     private WeatherApp.Models.GeocodingResult? location;
+    private bool isCelsius = true;
 
     private async Task HandleKeyDown(KeyboardEventArgs e)
     {
@@ -73,5 +86,16 @@
         weather = await WeatherService.GetWeatherAsync(location.Latitude, location.Longitude);
 
         isLoading = false;
+    }
+
+    private void ToggleUnit() => isCelsius = !isCelsius;
+
+    private string GetDisplayTemp()
+    {
+        if (weather?.Current == null) return "";
+        var temp = isCelsius
+            ? weather.Current.Temperature2m
+            : Math.Round(weather.Current.Temperature2m * 9 / 5 + 32, 1);
+        return temp.ToString();
     }
 }

@@ -60,6 +60,7 @@ h1:focus {
 }
 
 .weather-card{
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
