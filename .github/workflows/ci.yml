@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        usesL actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      
+      - name: Restore dependencies
+        run: dotnet restore src/WeatherApp/WeatherApp.csproj
+
+      - name: build
+        run: dotnet restore src/WeatherApp.Tests/WeatherApp.Tests.csproj
+
+      - name: Restore test dependencies
+        run: dotnet restore src/WeatherApp.Tests/WeatherApp.Tests.csproj
+
+      - name: Run Tests
+        run: dotnet test src/WeatherApp.Tests/WeatherApp.Tests.csproj --no-restore --verbosity normal
