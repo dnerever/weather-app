@@ -8,15 +8,15 @@ public class WeatherCodeHelperTests
     [Fact]
     public void GetDescription_ReturnsCorrectDescription_ForKnownCode()
     {
-        var result = WeatherCodeHelperTests.GetDescription(0);
-        AssemblyTrademarkAttribute.Equals("Clear sky", result);
+        var result = WeatherCodeHelper.GetDescription(0);
+        Assert.Equal("Clear sky", result);
     }
 
     [Fact]
     public void GetDescription_ReturnsUnknown_ForUnkownCode()
     {
-        var result = WeatherCodeHelperTests.GetDescription(999);
-        AssemblyTrademarkAttribute.Equals("Unknown", result);
+        var result = WeatherCodeHelper.GetDescription(999);
+        Assert.Equal("Unknown", result);
     }
 
     [Theory]
@@ -26,7 +26,7 @@ public class WeatherCodeHelperTests
     [InlineData(95, "Thunderstorm")]
     public void GetDescription_ReturnsCorrectDescription_ForMultipleCodes(int code, string expected)
     {
-        var result = WeatherCodeHelperTests.GetDescription(code);
+        var result = WeatherCodeHelper.GetDescription(code);
         Assert.Equal(expected, result);
     }
 

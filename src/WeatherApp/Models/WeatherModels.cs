@@ -45,6 +45,6 @@ public static class WeatherCodeHelper
 
     public static string GetDescription(int code)
     {
-        return Descriptions.TryGetValue(code, out var description) ? description : "unknown";
+        return Descriptions.TryGetValue(code, out var description) ? description : "Unknown";
     }
 }
