@@ -32,9 +32,9 @@
             <div class="card-body">
                 <h3 class="card-title">@location.Name, @location.Country</h3>
                 <hr />
-                <p class="fs-5">@WeatherCodeHelper.GetDescription(weather.Current.WeatherCode)</p>
-                <p>Temperature: <strong>@weather.Current.Temperature2m C</strong></p>
+                <p>Temperature: <strong>@weather.Current.Temperature2m °C</strong></p>
                 <p>Wind Speed: <strong>@weather.Current.WindSpeed10m km/h</strong></p>
+                <p class="fs-5">@WeatherCodeHelper.GetEmoji(weather.Current.WeatherCode) @WeatherCodeHelper.GetDescription(weather.Current.WeatherCode)</p>
             </div>
         </div>
     }

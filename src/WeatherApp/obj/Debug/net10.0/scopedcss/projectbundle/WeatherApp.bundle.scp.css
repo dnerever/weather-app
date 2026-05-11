@@ -97,6 +97,11 @@ main[b-6i13tjk15q] {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+article[b-6i13tjk15q] {
+    background: linear-gradient(125deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
+    min-height: 100vh;
+}
 /* /Components/Layout/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-f6q79iv57u] {
     appearance: none;

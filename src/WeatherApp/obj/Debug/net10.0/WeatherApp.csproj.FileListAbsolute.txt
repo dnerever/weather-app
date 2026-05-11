@@ -23,7 +23,6 @@
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/scopedcss/Components/Layout/ReconnectModal.razor.rz.scp.css
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/scopedcss/bundle/WeatherApp.styles.css
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/scopedcss/projectbundle/WeatherApp.bundle.scp.css
-/home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/zcq9s1xo44-{0}-w7mf952350-w7mf952350.gz
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/j2qljnbiso-{0}-bqjiyaj88i-bqjiyaj88i.gz
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/zropvr9gas-{0}-c2jlpeoesf-c2jlpeoesf.gz
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/9avnzatm90-{0}-erw9l3u2r3-erw9l3u2r3.gz
@@ -71,8 +70,6 @@
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/rhns1h3x3i-{0}-cyz5k529gx-cyz5k529gx.gz
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/o6dpuxn3zv-{0}-hwaxidwiwj-hwaxidwiwj.gz
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/r3c4bsqhek-{0}-xbbil6v7co-xbbil6v7co.gz
-/home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/aat6virfgr-{0}-1nxhqqner7-1nxhqqner7.gz
-/home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/gdw0jldr64-{0}-1nxhqqner7-1nxhqqner7.gz
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/staticwebassets.build.json
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/staticwebassets.build.json.cache
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/staticwebassets.development.json
@@ -84,3 +81,6 @@
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/WeatherApp.genruntimeconfig.cache
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/ref/WeatherApp.dll
 /home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/WeatherApp.sourcelink.json
+/home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/aat6virfgr-{0}-60sg62xz0e-60sg62xz0e.gz
+/home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/gdw0jldr64-{0}-60sg62xz0e-60sg62xz0e.gz
+/home/jd/dev/weather-app/src/WeatherApp/obj/Debug/net10.0/compressed/zcq9s1xo44-{0}-ev9nmpkdj4-ev9nmpkdj4.gz

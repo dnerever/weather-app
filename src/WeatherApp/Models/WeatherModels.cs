@@ -47,4 +47,21 @@ public static class WeatherCodeHelper
     {
         return Descriptions.TryGetValue(code, out var description) ? description : "Unknown";
     }
+
+    private static readonly Dictionary<int, string> Emojis = new()
+    {
+        { 0, "☀️" },
+        { 1, "🌤️" }, { 2, "⛅" }, { 3, "☁️" },
+        { 45, "🌫️" }, { 48, "🌫️" },
+        { 51, "🌦️" }, { 53, "🌦️" }, { 55, "🌧️" },
+        { 61, "🌧️" }, { 63, "🌧️" }, { 65, "🌧️" },
+        { 71, "🌨️" }, { 73, "❄️" }, { 75, "❄️" },
+        { 80, "🌦️" }, { 81, "🌧️" }, { 82, "⛈️" },
+        { 95, "⛈️" }, { 96, "⛈️" }, { 99, "⛈️" }
+    };
+
+    public static string GetEmoji(int code)
+    {
+        return Emojis.TryGetValue(code, out var emoji) ? emoji : "🌡️";
+    }
 }
