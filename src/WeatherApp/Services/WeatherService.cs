@@ -29,7 +29,9 @@ public class WeatherService
     {
         var url = $"https://api.open-meteo.com/v1/forecast" +
             $"?latitude={latitude}&longitude={longitude}" +
-            $"&current=temperature_2m,wind_speed_10m,weather_code";
+            $"&current=temperature_2m,wind_speed_10m,weather_code" +
+            $"&daily=temperature_2m_max,temperature_2m_min,weather_code" +
+            $"&timezone=auto";
         return await _httpClient.GetFromJsonAsync<WeatherResponse>(url, JsonOptions);
     }
 }

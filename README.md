@@ -3,6 +3,8 @@
 
 A Blazor Server web app that takes a city name, geocodes it via the Open-Meteo API, and displays current temperature, wind speed, and weather.
 
+![WeatherNow App](docs/images/screenshot.png)
+
 ## Skills Demonstrated
 | Skill | Detail |
 |---|---|

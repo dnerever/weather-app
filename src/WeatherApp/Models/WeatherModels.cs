@@ -6,6 +6,7 @@ public class WeatherResponse
 {
     public CurrentWeather? Current { get; set; }
     public CurrentWeatherUnits? CurrentUnits { get; set; }
+    public DailyWeather? Daily { get; set; }
 }
 
 public class CurrentWeather
@@ -27,6 +28,21 @@ public class CurrentWeatherUnits
 
     [JsonPropertyName("wind_speed_10m")]
     public string? WindSpeed10m { get; set; }
+}
+
+public class DailyWeather
+{
+    [JsonPropertyName("time")]
+    public List<string>? Time { get; set; }
+    
+    [JsonPropertyName("temperature_2m_max")]
+    public List<double>? Temperature2mMax { get; set; }
+
+    [JsonPropertyName("temperature_2m_min")]
+    public List<double>? Temperature2mMin { get; set; }
+
+    [JsonPropertyName("weather_code")]
+    public List<int>? WeatherCode { get; set; }
 }
 
 public static class WeatherCodeHelper
@@ -65,3 +81,4 @@ public static class WeatherCodeHelper
         return Emojis.TryGetValue(code, out var emoji) ? emoji : "🌡️";
     }
 }
+
