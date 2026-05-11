@@ -1,35 +1,44 @@
 ﻿@page "/weather"
 @rendermode InteractiveServer
 @inject WeatherApp.Services.WeatherService WeatherService
+@using WeatherApp.Models
 
 <PageTitle>Weather</PageTitle>
 
 <h1>Weather</h1>
 
-<div class="mb-3">
-    <input class="form-control" placeholder="Enter city name..."
-        @bind="cityInput" @bind:event="oninput" />
-    <button class="btn btn-primary mt-2" @onclick="SearchWeather">Search</button>
-</div>
+<div class="container mt-4" style="max-width: 500px;">
+    <h1 class="mb-4">Weather Search</h1>
 
-
-@if (isLoading)
-{
-    <p><em>Loading...</em></p>
-}
-else if (errorMessage != null)
-{
-    <p class="text-danger">@errorMessage</p>
-}
-else if (weather != null && location != null)
-{
-    <div class="card p-3" style="max-width: 400px;">
-        <h3>@location.Name, @location.Country</h3>
-        <p>Temperature: <strong>@weather.Current?.Temperature2m C</strong></p>
-        <p>Wind Speed: <strong>@weather.Current?.WindSpeed10m km/h</strong></p>
-        <p>Weather Code: <strong>@weather.Current?.WeatherCode</strong></p>
+    <div class="mb-3">
+        <input class="form-control" placeholder="Enter city name..."
+            @bind="cityInput" @bind:event="oninput"
+            @onkeydown="HandleKeyDown" />
+        <button class="btn btn-primary" @onclick="SearchWeather">Search</button>
     </div>
-}
+
+
+    @if (isLoading)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else if (errorMessage != null)
+    {
+        <p class="alert alert-danger">@errorMessage</p>
+    }
+    else if (weather?.Current != null && location != null)
+    {
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3 class="card-title">@location.Name, @location.Country</h3>
+                <hr />
+                <p class="fs-5">@WeatherCodeHelper.GetDescription(weather.Current.WeatherCode)</p>
+                <p>Temperature: <strong>@weather.Current.Temperature2m C</strong></p>
+                <p>Wind Speed: <strong>@weather.Current.WindSpeed10m km/h</strong></p>
+            </div>
+        </div>
+    }
+</div>
 
 @code {
     private string cityInput = "";
@@ -37,6 +46,11 @@ else if (weather != null && location != null)
     private string? errorMessage;
     private WeatherApp.Models.WeatherResponse? weather;
     private WeatherApp.Models.GeocodingResult? location;
+
+    private async Task HandleKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter") await SearchWeather();
+    }
 
     private async Task SearchWeather()
     {
@@ -57,6 +71,7 @@ else if (weather != null && location != null)
         }
 
         weather = await WeatherService.GetWeatherAsync(location.Latitude, location.Longitude);
+
         isLoading = false;
     }
 }
