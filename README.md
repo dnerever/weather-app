@@ -3,6 +3,15 @@
 
 A Blazor Server web app that takes a city name, geocodes it via the Open-Meteo API, and displays current temperature, wind speed, and weather.
 
+## Skills Demonstrated
+| Skill | Detail |
+|---|---|
+| **C# .NET & Blazor** | Full stack web app with interactive server rendering |
+| **Dependency Injection** | Service layer registered and injected via Program.cs |
+| **REST API Integration** | Geocoding and weather data from Open-Meteo |
+| **Unit Testing** | xUnit with mock HTTP handler |
+| **CI/CD** | GitHub Actions pipeline runs on every push |
+
 ## Tech Stack
 * .NET 10
 * Blazor
@@ -30,12 +39,3 @@ dotnet test src/WeatherApp.Tests
 
 ## GitHub Actions
 GitHub Actions is configured to build and run the full test suite on every push to `main`, ensuring regressions are caught before merging.
-
-## Skills Demonstrated
-| Skill | Detail |
-|---|---|
-| **C# .NET & Blazor** | Full stack web app with interactive server rendering |
-| **Dependency Injection** | Service layer registered and injected via Program.cs |
-| **REST API Integration** | Geocoding and weather data from Open-Meteo |
-| **Unit Testing** | xUnit with mock HTTP handler |
-| **CI/CD** | GitHub Actions pipeline runs on every push |
